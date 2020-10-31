@@ -1,22 +1,17 @@
 function warnTheSheep(queue) {
-    // your code here
-    // queue.forEach(el => {
-    //     if (el === 'wolf'){
-
-    //     }
-    // })
-    let wolf = 0
-    for (let i = 0; i < queue.length; i++) {
-        let length = Number(queue.length)+1
-        if (queue[i]==='wolf' && queue.length == queue[i]){
-            return ("Pls go away and stop eating my sheep")
-        }else if (queue[i] === 'wolf') {
-            return (`Oi! Sheep number ${length-(i+2)}! You are about to be eaten by a wolf!`);
-        }
-
-    }
+// mencari index si "Wolf"
+    let wolf = Number(queue.indexOf("wolf"))
     // console.log(wolf);
-    
+    let prey = queue[wolf + 1]
+    // console.log(prey);
+    let sheepIndex = (queue.length-1)-wolf
+    // console.log(sheepIndex);
+    if (prey == "sheep") {
+        return `Oi! Sheep number ${sheepIndex}! You are about to be eaten by a wolf!`
+    } 
+    else if (sheepIndex == 0){
+        return "Pls go away and stop eating my sheep"
+    }
 } 
 
 
